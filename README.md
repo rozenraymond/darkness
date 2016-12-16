@@ -1,2 +1,0 @@
-# darkness
-Project 2
