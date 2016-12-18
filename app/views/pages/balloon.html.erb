@@ -1,1 +1,45 @@
 <h3>Poop the balloons</h3>
+
+<div id="balloons" style="width: 500px; height: 250px; margin: 0 auto;"></div>
+
+<script>
+  // Essentially, you would need a scene, camera, mesh, and renderer
+
+  var renderer = new THREE.WebGLRenderer(); // Will create the renderer; in canvas element state
+  renderer.setClearColor( 0x00ff00 );
+  renderer.setPixelRatio( window.devicePixelRatio );
+
+  // Size of the window is depending on the element
+  renderer.setSize( parseInt( $( "#balloons" ).css( "width" ) ), parseInt( $( "#balloons" ).css( "height" ) ) );
+
+  $( "#balloons" ).append( renderer.domElement ); // Will append the canvas element
+
+  // This is more of the viewing perspective
+  var camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 0.1, 3000 );
+
+  // Will create the scene to stage the object
+  var scene = new THREE.Scene();
+
+  var light = new THREE.AmbientLight( 0xffffff, 0.5 );
+  scene.add( light );
+
+  var pointLight = new THREE.PointLight( 0xffffff, 0.5 );
+  scene.add( pointLight );
+
+  var geometry = new THREE.CubeGeometry( 100, 100, 100 ); // Parameter of x, y, z index
+  var material = new THREE.MeshLambertMaterial( { color: 0xF3FFE2 } ); // Just create the basic material
+  // This will create the object, based on the shape/material defined
+  var mesh = new THREE.Mesh( geometry, material );
+  mesh.position.set( 0, 0, -500 ); // Position of the object
+
+  scene.add( mesh ); // Make sure to add it in the scene
+
+  requestAnimationFrame( render );
+
+  function render () {
+    mesh.rotation.x += 0.01;
+    mesh.rotation.y += 0.01;
+    renderer.render( scene, camera );
+    requestAnimationFrame( render );
+  }
+</script>

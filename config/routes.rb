@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get '/maze' => 'pages#maze'
 
   #poop balloons page
-  get '/balloons' => 'pages#balloons'
+  get '/balloons' => 'pages#balloon'
 
   #ending page
   get '/ending' => 'pages#ending'
