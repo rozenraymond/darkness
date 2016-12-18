@@ -1,0 +1,9 @@
+<!-- For Debugging and Testing -->
+
+<h1>LET'S CHECK OUT OUR USERS</h1>
+
+<% @users.each do |u| %>
+  <p>
+    <%= link_to(u.name, u) %>
+  </p>
+<% end %>

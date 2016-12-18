@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
   root "pages#home"
 
-  #homepage
-  get '/home' => 'pages#home'
+  #homepage / "create" user
+  get '/home' => 'users#new'
+  post '/home' => 'users#create'
 
   #intro
   get '/intro' => 'pages#intro'
 
-  #input struggles
-  get '/struggles' => 'pages#inputStruggle'
+  #input struggles / "create" post
+  get '/struggles' => 'posts#new'
+  post '/struggles' => 'posts#create'
 
   #swimming page
   get '/swim' => 'pages#swim'
@@ -24,5 +26,8 @@ Rails.application.routes.draw do
 
   #ending page
   get '/ending' => 'pages#ending'
+
+  resources :users
+  resources :posts
 
 end

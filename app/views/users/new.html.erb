@@ -1,0 +1,16 @@
+<h3>Home Page</h3>
+
+<!-- This is where you enter your name -->
+
+
+<h4>Enter your name</h4>
+
+<%= form_for @user do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, :required => true %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

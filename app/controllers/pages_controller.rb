@@ -5,9 +5,6 @@ class PagesController < ApplicationController
   def intro
   end
 
-  def inputStruggle
-  end
-
   def swim
   end
 
@@ -21,7 +18,11 @@ class PagesController < ApplicationController
   end
 
   def ending
-  end 
+  end
 
+  private
+  def post_params
+    params.require(:post).permit(:name, :content)
+  end
 
 end

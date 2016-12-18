@@ -1,0 +1,18 @@
+<h3>Home Page</h3>
+
+<!-- This is where you enter your name -->
+
+
+<h4>Let it out</h4>
+
+<!-- Sam, you need to come back here and add current_user, so you can ensure posts are locked to the current user -->
+
+<%= form_for @post do |f| %>
+  <p>
+    <%= f.label "Share your struggles" %>
+    <%= f.text_area :content, :required => true %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

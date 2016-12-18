@@ -37,6 +37,8 @@ group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
   gem 'annotate'
+  gem 'pry-stack_explorer'
+  gem "better_errors"
 end
 
 group :development do

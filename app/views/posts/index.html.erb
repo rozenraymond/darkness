@@ -1,0 +1,9 @@
+<!-- For Debugging and Testing -->
+
+<h1>LET'S CHECK OUT OUR POSTS</h1>
+
+<% @posts.each do |p| %>
+  <p>
+    <%= link_to(p.id, p) %>
+  </p>
+<% end %>

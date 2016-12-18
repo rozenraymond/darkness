@@ -1,0 +1,13 @@
+<!-- For debugging and testing only -->
+
+<h3><%= @user.name %></h3>
+
+<p>number of posts: <%= @user.posts.length %></p>
+
+<p>Posts:</p>
+
+<p>
+  <% @user.posts.each do |p| %>
+    <%= link_to(p.content, post_path(p) ) %>
+  <% end %>
+</p>

@@ -1,7 +1,7 @@
 class CreatePosts < ActiveRecord::Migration
   def change
     create_table :posts do |t|
-      t.text :name
+      t.integer :user_id
       t.text :content
 
       t.timestamps null: false
