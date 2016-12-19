@@ -8,6 +8,6 @@
 
 <p>
   <% @user.posts.each do |p| %>
-    <%= link_to(p.content, post_path(p) ) %>
+    <%= link_to(p.content, post_path(p) ) %> <p>
   <% end %>
 </p>

@@ -10,6 +10,9 @@ class PostsController < ApplicationController
 
   def create
     post = Post.create post_params
+    post.user_id = @current_user
+    post.save
+    binding.pry
     redirect_to swim_path
   end
 
